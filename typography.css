@@ -1,0 +1,27 @@
+@font-face {
+	font-family:myFirstFont;
+	src: url( 20db.otf );
+}
+
+body { 
+	font-size:62.5%; 
+	color: rgb( 0, 0, 0 );
+	/* opacity: 0.2; */
+	background: url("red-white.png") repeat-x;
+	font-family: myFirstFont;
+}
+h1 { font-size: 2.4rem; } /* =24px */
+p  { font-size: 1.4rem; } /* =14px */
+li { font-size: 1.8rem; } /* =14px? */
+li li { font-size: .8em; list-style-type: lower-roman; } 
+
+ol { list-style-type: lower-greek; }
+li:nth-child(1) { font-weight: 100; }
+li:nth-child(2) { font-weight: 200; }
+li:nth-child(3) { font-weight: 300; }
+li:nth-child(4) { font-weight: 400; }
+li:nth-child(5) { font-weight: 500; }
+li:nth-child(6) { font-weight: 600; }
+li:nth-child(7) { font-weight: 700; }
+li:nth-child(8) { font-weight: 800; }
+li:nth-child(9) { font-weight: 900; }

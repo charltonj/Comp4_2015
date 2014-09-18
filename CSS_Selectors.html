@@ -1,0 +1,298 @@
+﻿<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS - Selectors</title>
+    <link rel="stylesheet" type="text/css" href="your_sheet_here.css" />
+    <!-- CSS classes used in this document:
+         - highlight
+         - selector_type
+		 - css_selector
+		 - css_property
+		 - css_value
+         - note
+		 - important
+		 - em_white
+         IDs used in this document:
+         - school_class
+    -->
+	<style>
+		code {
+			white-space: pre;
+		}
+		.css_selector {
+			color:blue;
+		}
+		.css_property {
+			color:red;
+		}
+		.css_value {
+			background-color: #faf;
+		}
+		td:nth-child(2) { background-color:red; }
+		table { border: 2px solid blue; }
+		th { background-color: #aa4; }
+		.selector_type { background-color: #f4f; }
+	</style>	
+  </head>
+
+  <body>
+
+    <div id="school_class">
+      <h2>Computer Programming IV</h2>
+      <h3>Loyola High School</h3>
+    </div>
+
+    <article>
+
+      <header>
+        <h1><abbr title="Cascading Style Sheets">CSS</abbr></h1>
+        <h2>Selectors Explained</h2>
+      </header>
+
+      <p><abbr title="Cascading Style Sheets">CSS</abbr> allows you to control both
+      the <em>style</em> and the <em>position</em> of the content on your page.</p>
+
+      <p>By changing the CSS in one location all the elements using
+      that styling can be changed at once.</p>
+
+      <p>The CSS <span class="highlight">selector</span> determines
+      which elements take on that styling.</p>
+
+      <p>Not discussed here are <em>pseudo-selectors</em> which can select
+      items based on their state, or position in a document. They could be used for example
+      to select the first line of a paragraph, the colour of a link when the mouse is over it, or
+      the third column in a table. See
+      <a href="http://www.w3schools.com/cssref/css_selectors.asp">this article</a>
+      at w3schools for more information.</p>
+
+      <section> <h4>Elemental Selectors</h4>
+	  
+        <p><b>There are three simple selectors which operate on a named item.</b> You can select
+        based on an HTML tag, a user-defined class, or a user-defined id. While a class can
+        be used many times in a document, an id should be used only once.</p>
+
+        <table>
+          <thead>
+            <tr> <th>Example</th> <th>Notes</th> </tr>
+          </thead>
+          <tbody>
+		  
+            <tr>
+              <td colspan='2' class="selector_type">HTML tags</td>
+            </tr>
+			
+            <tr>
+			  <td>
+<code>
+<span class="css_selector">h1</span> {
+    <span class="css_property">color</span>: <span class="css_value">blue</span>;
+}
+</code>
+			  </td>
+              <td>This will change all the <code>&lt;h1&gt;</code> headings to blue</td>
+            </tr>
+			
+            <tr>
+              <td>
+<code>
+<span class="css_selector">body</span> { 
+    <span class="css_property">color</span>: <span class="css_value">white</span>; 
+}
+</code> 
+			  </td>
+              <td>This changes all the text of the document to <em class="em_white">white!</em></td>
+            </tr>
+            <tr>
+              <td>
+<code>
+<span class="css_selector">b</span> { 
+    <span class="css_property">color</span>: <span class="css_value">red</span>;
+}
+</code>
+			  </td>
+              <td>This will change everything in a <code>&lt;b&gt;</code> tag to red</td>
+            </tr>
+			
+            <tr>
+              <td colspan='2' class="selector_type">Classes</td>
+            </tr>
+			
+            <tr>
+              <td> 
+<code>
+<span class="css_selector">.sarcastic</span> { 
+    <span class="css_property">color</span>: <span class="css_value">green</span>;
+}
+</code>
+			  </td>
+              <td>This will change all elements of class 'sarcastic' to green</td>
+            </tr>
+			
+            <tr>
+              <td>
+<code>
+<span class="css_selector">.warning</span> { 
+    <span class="css_property">color</span>: <span class="css_value">orange</span>;
+}
+</code>
+			  </td>
+              <td>This will change all elements of class 'warning' to orange.</td>
+            </tr>
+			
+            <tr>
+              <td colspan='2' class="selector_type">ID</td>
+            </tr>
+			
+            <tr>
+              <td>
+<code>
+<span class="css_selector">#footer</span> {
+    <span class="css_property">background-color</span>: <span class="css_value">lightgrey</span>;
+}
+</code>
+			  </td>
+              <td>This changes the background of the element with id 'footer'.</td>
+            </tr>
+			
+            <tr>
+              <td>
+<code>
+<span class="css_selector">#sidebar</span> {
+    <span class="css_property">border</span>: <span class="css_value">3px dotted green</span>; 
+}
+</code>
+			  </td>
+              <td>This will put a border around the div marked with id 'sidebar</td>
+            </tr>
+			
+          </tbody>
+		  
+        </table>
+      </section>
+
+      <section> <h4>Contained Selectors</h4>
+	  
+        <p><b>These will select items <em>inside</em> another item.</b> The first element is searched
+        for an element of the second type. <em>Note the space between the two tokens</em></p>
+
+        <table>
+		
+          <thead>
+            <tr> <th>Example</th> <th>Notes</th> </tr>
+          </thead>
+		  
+          <tbody>
+		  
+            <tr>
+              <td>
+<code>
+<span class="css_selector">table .comment</span> { 
+    <span class="css_property">color</span>: <span class="css_value">green</span>; 
+}
+</code> 
+			  </td>
+              <td>
+				This selects all the items of class 'comment' inside a <code>&lt;table&gt;</code>.
+                <span class="note important">Note the space!</span>
+			  </td>
+            </tr>
+			
+            <tr>
+              <td>
+<code>
+<span class="css_selector">#read_me_first em</span> { 
+    <span class="css_property">color</span>: <span class="css_value">white</span>; 
+}
+</code>
+			  </td>
+              <td>This selects all items tagged with <code>&lt;em&gt;</code> inside the element
+                  with <code>id="read_me_first"</code> (usually a <code>&lt;div&gt;</code>)</td>
+            </tr>
+			
+          </tbody>
+        </table>
+      </section>
+
+      <section> <h4>Elements of a given type</h4>
+
+        <p><b>These will select items of a given class, usually.</b> Here there is no space between
+        the element and the class name.</p>
+
+        <table>
+          <thead>
+            <tr> <th>Example</th> <th>Notes</th> </tr>
+          </thead>
+          <tbody>
+		  
+            <tr>
+              <td> 
+<code>
+<span class="css_selector">table.results</span> {
+    <span class="css_property">color</span>: <span class="css_value">darkslategray</span>;
+}</code>
+			  </td>
+              <td>This will select any table that is of class 'results'.</td>
+            </tr>
+			
+            <tr>
+              <td>
+<code>
+<span class="css_selector">p.comment</span> { 
+    <span class="css_property">color</span>: <span class="css_value">green</span>;
+}
+</code> 
+			  </td>
+              <td>This selects all paragraphs with a class of 'comment'.</td>
+            </tr>
+			
+          </tbody>
+        </table>
+      </section>
+
+      <section> <h4>Applying styles to multiple objects</h4>
+
+        <p><b>You can apply the same style to <mark>multiple selections</mark> at once 
+		by seperating them with commas.</b> A clean style is to put each selector on its own line, but <em>
+		remember not to put an extra comma after the last one!</em></p>
+
+        <table>
+		
+          <thead>
+            <tr> <th>Example</th> <th>Notes</th> </tr>
+          </thead>
+		  
+          <tbody>
+		  
+            <tr>
+              <td>
+<code>
+<span class="css_selector">h2,
+h3 em, 
+p.revised </span>{ 
+    <span class="css_property">color</span>: <span class="css_value">black</span>; 
+}
+</code>
+              </td>
+              <td>This changes the colour of <code>&lt;h2&gt;</code> elements,
+                emphasized elements inside an <code>&lt;h3&gt;</code>,
+                and <code>&lt;p&gt;</code> tags of class 'revised'.</td>
+            </tr>
+			
+          </tbody>		  
+        </table>
+      </section>
+
+    </article>
+
+    <footer>
+      <h4>&copy; 2013</h4>
+      <address>
+        <a href="mailto:charltonj@loyola.ca?subject=CSS%20Selectors">J.Charlton</a>
+      </address>
+    </footer>
+
+  </body>
+
+</html>
