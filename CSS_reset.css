@@ -1,0 +1,13 @@
+		  /* Full CSS reset */
+			* {
+				margin: 0;
+				padding: 0;
+				color: black;
+				background-color: white;
+				font-family: sans-serif;
+				font-size: 1em;
+				font-style: normal;
+				font-weight: normal;
+				white-space: normal;
+				text-decoration: none;
+			}
